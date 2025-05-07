@@ -41,7 +41,7 @@
       :key="item.id"
       :to="`/muder/${item.id}`"
     > 
-      <CardComponent class="flex flex-row gap-2 items-center justify-between w-full">
+      <CardComponent class="flex flex-row items-center justify-between w-full">
         <NuxtImg
           :src="item.photo"
           height="40"
@@ -53,11 +53,15 @@
         </div>
 
         <div>
-          <div v-if="item.status == 'Grau 1'" class="bg-red-500 p-1 rounded text-sm font-semibold text-white">
+          <div v-if="item.status == 'Grau 1'" class="bg-red-500 px-2 rounded text-sm font-semibold text-white">
             {{ item.status }}
           </div>
 
-          <div v-else class="bg-orange-500 p-1 rounded text-sm font-semibold text-white">
+          <div v-else-if="item.status == 'Grau 2'" class="bg-orange-500 px-2 rounded text-sm font-semibold text-white">
+            {{ item.status }}
+          </div>
+
+          <div v-else class="bg-yellow-500 px-2 rounded text-sm font-semibold text-white">
             {{ item.status }}
           </div>
         </div>
