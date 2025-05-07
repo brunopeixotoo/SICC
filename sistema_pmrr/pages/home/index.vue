@@ -5,7 +5,7 @@
         to="/home"
         class="font-semibold text-xl text-blue-900"
       >
-        Início
+        {{ title }}
       </NuxtLink>
     
       <NuxtImg
@@ -16,13 +16,6 @@
     </nav>
   
     <section class="flex flex-col items-center gap-2">
-      <!-- <NuxtLink
-        class="bg-green-500 rounded p-2 mt-3"
-      >
-        <p class="font-semibold text-white">
-          + Novo Registro
-        </p>
-      </NuxtLink> -->
       <div class="flex items-center justify-center w-full p-3">
         <InputComponent
           label="Buscar categoria"
@@ -31,21 +24,15 @@
           v-model="search"
           class="text-white"
         />
-
-        <button class="flex items-center justify-center bg-white rounded-r h-12 px-4 mt-7">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 24 24">
-            <path fill="black" d="M9.5 16q-2.725 0-4.612-1.888T3 9.5t1.888-4.612T9.5 3t4.613 1.888T16 9.5q0 1.1-.35 2.075T14.7 13.3l5.6 5.6q.275.275.275.7t-.275.7t-.7.275t-.7-.275l-5.6-5.6q-.75.6-1.725.95T9.5 16m0-2q1.875 0 3.188-1.312T14 9.5t-1.312-3.187T9.5 5T6.313 6.313T5 9.5t1.313 3.188T9.5 14"/>
-          </svg>
-        </button>
       </div>
 
-      <div class="grid grid-cols-2 md:grid-cols-1 gap-4 mb-8 justify-center">
+      <div class="grid grid-cols-2 md:grid-cols-1 gap-4 mb-10 justify-center">
         <NuxtLink
           v-for="crime in filteredCrimes"
           :key="crime.id"
           :to="crime.path"
         >
-          <CardComponent class="w-40 h-48 flex flex-col items-center justify-center">
+          <CardComponent class="w-32 h-34 flex flex-col items-center justify-center">
             <div class="flex flex-col gap-3 items-center">
               <NuxtImg
                 :src="crime.href"
@@ -72,6 +59,8 @@
     CardComponent,
     InputComponent
   } from '#components';
+
+  const title = ref('Início')
 
   const crimesCard = ref([
     {id: 0, name: 'Homicídio', path:'/muder', href:'https://previews.123rf.com/images/vectorwin/vectorwin2202/vectorwin220203297/182612247-vetor-de-%C3%ADcone-de-linha-de-crime-de-homic%C3%ADdio-sinal-de-crime-de-homic%C3%ADdio-isolado-contorno-s%C3%ADmbolo.jpg'},
