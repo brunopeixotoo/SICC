@@ -38,12 +38,12 @@
     </div>
 
     <!-- List of Registers -->
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mb-12">
       <NuxtLink
         v-for="item in filteredRegisters"
         :key="item.id"
         :to="`/muder/${item.id}`"
-        class="block bg-white rounded shadow-md hover:shadow-lg transition p-4"
+        class="block hover:shadow-lg transition"
       >
         <CardComponent class="flex flex-row items-center gap-4">
           <NuxtImg

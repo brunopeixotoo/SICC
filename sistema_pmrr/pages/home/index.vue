@@ -25,19 +25,19 @@
       />
     </div>
 
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mb-12">
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 mb-12">
       <NuxtLink
         v-for="crime in filteredCrimes"
         :key="crime.id"
         :to="crime.path"
-        class="block bg-white rounded-lg shadow-md hover:shadow-lg transition transform hover:-translate-y-1 p-4"
+        class="block hover:shadow-lg transition transform hover:-translate-y-1 p-4"
       >
-        <CardComponent class="flex flex-col items-center gap-4">
+        <CardComponent class="flex flex-col items-center gap-4 rounded">
           <NuxtImg
             :src="crime.href"
             height="80"
             width="80"
-            class="object-contain rounded-lg border border-gray-200"
+            class="object-contain"
           />
           <p class="font-semibold text-blue-900 text-lg text-center">
             {{ crime.name }}
