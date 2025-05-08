@@ -30,9 +30,9 @@
         v-for="crime in filteredCrimes"
         :key="crime.id"
         :to="crime.path"
-        class="block hover:shadow-lg transition transform hover:-translate-y-1 p-4"
+        class="block hover:shadow-lg transition transform hover:-translate-y-1 px-4"
       >
-        <CardComponent class="flex flex-col items-center gap-4 rounded">
+        <CardComponent class="flex flex-col items-center rounded">
           <NuxtImg
             :src="crime.href"
             height="80"
@@ -51,8 +51,6 @@
       Nenhuma categoria encontrada.
     </div>
   </section>
-
-  <NavComponent />
 </template>
 
 <script setup>

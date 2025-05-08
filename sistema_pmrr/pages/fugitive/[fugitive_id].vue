@@ -20,19 +20,19 @@
         />
       </div>
 
-      <div class="flex flex-col font-semibold gap-6">
+      <div class="flex flex-col gap-6">
         <div class="flex flex-col items-start">
-          <p class="text-blue-900">Nome:</p>
+          <p class="text-blue-900 font-semibold">Nome:</p>
           <span class="text-gray-900">José Henrique</span>
         </div>
 
         <div class="flex flex-col items-start">
-          <p class="text-blue-900">Apelido:</p>
+          <p class="text-blue-900 font-semibold">Apelido:</p>
           <span class="text-gray-900">Pombo</span>
         </div>
 
         <div class="flex flex-col items-start">
-          <p class="text-blue-900">Data de nascimento:</p>
+          <p class="text-blue-900 font-semibold">Data de nascimento:</p>
           <div class="flex gap-2">
             <span class="text-gray-900">10/04/1990</span>
             <span class="text-gray-500">(35 anos)</span>
@@ -40,17 +40,17 @@
         </div>
 
         <div class="flex flex-col items-start">
-          <p class="text-blue-900">Nome da mãe:</p>
+          <p class="text-blue-900 font-semibold">Nome da mãe:</p>
           <span class="text-gray-900">Maria da Silva Henrique</span>
         </div>
 
         <div class="flex flex-col items-start">
-          <p class="text-blue-900">Endereço:</p>
+          <p class="text-blue-900 font-semibold">Endereço:</p>
           <span class="text-gray-900">Rua das Camélias, 386, Liberdade</span>
         </div>
 
         <div class="flex flex-col items-start">
-          <p class="text-blue-900">Observação:</p>
+          <p class="text-blue-900 font-semibold">Observação:</p>
           <span class="text-gray-900 text-justify">
             Atuante no tráfico de drogas. Segundo investigações, inicia a circulação e atividades de venda por volta das 23 horas.
           </span>
