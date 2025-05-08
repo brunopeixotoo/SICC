@@ -1,29 +1,32 @@
 <template>
   <section class="p-1">
-    <nav class="flex fixed bg-white bottom-0 left-0 right-0 z-50 p-4 justify-between items-center border-t border-blue-900 shadow-md">
+    <nav class="flex fixed bg-white bottom-0 left-0 right-0 z-50 p-4 justify-between items-center border-t border-gray-200 shadow-md">
       <NuxtLink
-        v-for="item in navigation"
-        :key="item.id"
-        :to="item.href"
-        :class="[
-          'flex flex-col items-center text-md font-semibold transition',
-          item.current ? 'text-blue-600' : 'text-gray-700 hover:text-blue-600'
-        ]"
+        :to="path"
+        class="flex flex-col items-center text-xl text-gray-600 font-semibold transition"
       >
-        <i :class="item.icon" class="text-xl mb-1"></i>
-        {{ item.name }}
+        Voltar
+      </NuxtLink>
+
+      <NuxtLink
+        to="/home"
+        class="flex flex-col items-center text-xl text-gray-600 font-semibold transition"
+      >
+        Início
       </NuxtLink>
     </nav>
   </section>
 </template>
 
 <script setup>
-  const navigation = ref([
-    { id: 0, name: 'Início', href: '/home', icon: 'fas fa-home', current: true },
-    { id: 1, name: 'Registro', href: '/home', icon: 'fas fa-edit', current: false },
-    { id: 2, name: 'Categoria', href: '/home', icon: 'fas fa-list', current: false },
-    { id: 3, name: 'Sobre', href: '/home', icon: 'fas fa-info-circle', current: false },
-  ])
+
+  defineProps({
+    path: {
+      type: String,
+      default: ''
+    },
+  });
+
 </script>
 
 <style scoped>

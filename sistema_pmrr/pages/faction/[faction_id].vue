@@ -2,7 +2,7 @@
   <section class="min-h-screen p-4 bg-gray-100">
     <!-- Navbar -->
     <nav class="bg-white p-4 flex justify-between items-center rounded shadow-md mb-6">
-      <NuxtLink to="/muder" class="font-bold text-2xl text-blue-800 hover:text-blue-600 transition">
+      <NuxtLink to="/faction" class="font-bold text-2xl text-blue-800 hover:text-blue-600 transition">
         {{ title }}
       </NuxtLink>
       <NuxtImg src="https://upload.wikimedia.org/wikipedia/commons/1/11/Pmrr.GIF" height="50" width="60" class="rounded" />
@@ -67,7 +67,7 @@
   </section>
 
   <NavComponent
-    :path="`/muder`"
+    :path="`/faction`"
   />
 </template>
 

@@ -2,7 +2,7 @@
   <section class="min-h-screen p-4 bg-gray-100">
     <nav class="bg-white p-4 flex justify-between items-center rounded shadow-md mb-6">
       <NuxtLink
-        to="/muder"
+        to="/fugitive"
         class="font-bold text-2xl text-blue-800 hover:text-blue-600 transition"
       >
         {{ title }}
@@ -31,7 +31,7 @@
           label="Apelido"
           placeholder="Apelido"
           type="text"
-          v-model="dataRegister.surnam"
+          v-model="dataRegister.surname"
           class="max-w-md text-gray-700"
           optional
         />
@@ -101,7 +101,7 @@
   </section>
 
   <NavComponent
-    :path="`/muder`"
+    :path="`/fugitive`"
   />
 </template>
 
