@@ -41,7 +41,7 @@
     <div class="flex items-center justify-center w-full mb-6">
       <InputComponent
         label="Buscar registro"
-        placeholder="Nome ou Apelido"
+        placeholder="Nome"
         type="text"
         v-model="search"
         class="w-full max-w-md text-gray-700"
@@ -76,7 +76,10 @@
       <NuxtLink
         v-for="item in filteredAbertos"
         :key="item.id"
-        :to="`/openmp/${item.id}`"
+        :to="{
+          path: `/openmp/${item.id}`,
+          query: { name: item.name, completed: item.completed}
+        }"
         class="block hover:shadow-lg transition"
       >
         <CardComponent class="flex flex-row items-center gap-4">
@@ -112,7 +115,10 @@
       <NuxtLink
         v-for="item in filteredConcluidos"
         :key="item.id"
-        :to="`/openmp/${item.id}`"
+        :to="{
+          path: `/openmp/${item.id}`,
+          query: { name: item.name, completed: item.completed}
+        }"
         class="block hover:shadow-lg transition"
       >
         <CardComponent class="flex flex-row items-center gap-4">

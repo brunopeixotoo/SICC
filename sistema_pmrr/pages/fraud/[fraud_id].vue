@@ -29,7 +29,7 @@
       <div class="flex flex-col gap-6">
         <div class="flex flex-col items-start">
           <p class="text-blue-900 font-semibold">Nome:</p>
-          <span class="text-gray-900">José Henrique</span>
+          <span class="text-gray-900">{{ nameRegister }}</span>
         </div>
 
         <div class="flex flex-col items-start">
@@ -61,13 +61,31 @@
             Atuante no tráfico de drogas. Segundo investigações, inicia a circulação e atividades de venda por volta das 23 horas.
           </span>
         </div>
+
+        <div class="flex flex-col items-start">
+          <p class="text-blue-900 font-semibold">Status:</p>
+          <span v-if="!statusRegister" class="text-gray-900 text-justify">
+            Aberto
+          </span>
+
+          <span v-else class="text-gray-900 text-justify">
+            Concluído
+          </span>
+        </div>
       </div>
     </CardComponent>
 
     <div class="mt-6 mb-12 mx-5 flex justify-center">
       <ButtonComponent
+        v-if="!statusRegister"
         class="bg-green-600 hover:bg-green-500 text-white font-semibold shadow-md transition"
         label="Concluir registro"
+      />
+
+      <ButtonComponent
+        v-else
+        class="bg-red-600 hover:bg-green-500 text-white font-semibold shadow-md transition"
+        label="Apagar registro"
       />
     </div>
   </section>
@@ -83,6 +101,11 @@
     NavComponent,
     ButtonComponent
   } from '#components';
+  import { useRoute } from 'vue-router';
+
+  const route = useRoute();
+  const statusRegister = route.query.completed === 'true';
+  const nameRegister = route.query.name || '';
 
   const title = ref('Detalhamento de Registro');
 
